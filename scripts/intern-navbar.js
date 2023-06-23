@@ -4,10 +4,9 @@ var internNav = document.querySelector('.intern-nav');
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    internNav.style.transform = 'translateY(0)';
+    internNav.classList.remove('hidden');
   } else {
-    internNav.style.transform = 'translateY(100%)';
+    internNav.classList.add('hidden');
   }
   prevScrollpos = currentScrollPos;
 };
-

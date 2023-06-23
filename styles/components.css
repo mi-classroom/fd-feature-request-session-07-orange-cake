@@ -301,7 +301,10 @@
     text-decoration: underline;
     text-underline-offset: 0.2rem;
 }
-
+.hidden {
+    transform: translateY(100%);
+  }
+  
 @media screen and (max-width: 1020px) {
     .intern-nav {
         right: auto;
@@ -319,6 +322,7 @@
     }
     
 }
+
 
 
 /* Quantiy Selector
