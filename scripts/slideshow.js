@@ -41,3 +41,4 @@ const slideshow = (ele) => {
 window.addEventListener("DOMContentLoaded", (event) => {
     slideshow(slideshowElement);
 });
+
