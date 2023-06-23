@@ -259,7 +259,7 @@
     text-underline-offset: 0.2rem;
 }
 
-@media (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
     .intern-nav {
         right: auto;
         left: 0;
