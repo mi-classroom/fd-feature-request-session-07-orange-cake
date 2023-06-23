@@ -143,7 +143,7 @@
 /* Nutritional Values
 ############################################################################ */
 
-.nutritional-values{
+.nutritional-values {
     width: 100%;
     text-align: center;
 }
@@ -164,6 +164,26 @@
     font-weight: var(--font-weight-bold);
 }
 
+/* Media Queries
+############################################################################ */
+
+@media (max-width: 640px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ingredients,
+    .nutritional-values {
+        width: 100%;
+        padding: 0;
+    }
+
+    .nutritional-values dl {
+        margin-top: 1rem;
+    }
+}
+
 
 /* Navbar (Main Navigation)
 ############################################################################ */
@@ -178,7 +198,7 @@
 }
 
 .navbar ul {
-    display: flex;
+    display: column;
     width: 100%;
     justify-content: space-between;
     padding: 0;
@@ -189,13 +209,19 @@
     text-decoration: none;
 }
 
-.navbar ul li:not(:last-child) {
-    margin-right: var(--spacing-margin-large);
-}
-
-.navbar ul li:last-child {
-    margin-right: 0;
-    margin-left: auto;
+@media (min-width: 1020px) {
+    .navbar ul {
+        display: flex;
+    }
+    .navbar ul li:not(:last-child) {
+        margin-right: var(--spacing-margin-large);
+    }
+    
+    .navbar ul li:last-child {
+        margin-right: 0;
+        margin-left: auto;
+    }
+   
 }
 
 /* navbar link highlight */
@@ -209,7 +235,7 @@
 
 .intern-nav {
     position: fixed;
-    z-index: 1;
+    z-index: 9999; /* Adjusted z-index value */
     right: 0;
     margin-top: 0;
     background-color: var(--accent-lightest);
@@ -220,7 +246,6 @@
     list-style: none;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .intern-nav ul li {
     margin-right: 0;
 }
@@ -231,8 +256,26 @@
 
 .intern-nav ul li a[data-state="active"] {
     text-decoration: underline;
-    text-underline-offset: 0.2rem;}
+    text-underline-offset: 0.2rem;
+}
 
+@media (max-width: 1020px) {
+    .intern-nav {
+        right: auto;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .intern-nav ul {
+        padding: 0.5rem;
+    }
+
+    .intern-nav ul li {
+        margin-right: 1rem;
+    }
+    
+}
 
 
 /* Quantiy Selector
