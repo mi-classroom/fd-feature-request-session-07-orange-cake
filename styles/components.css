@@ -195,40 +195,83 @@
     width: 100%;
     padding: var(--spacing-margin-medium) var(--spacing-padding);
     background: var(--secondary);
-}
-
-.navbar ul {
-    display: column;
+  }
+  
+  .navbar ul {
+    display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 0;
     list-style: none;
-}
-
-.navbar ul li a {
+  }
+  
+  .navbar ul li a {
     text-decoration: none;
-}
-
-@media (min-width: 1020px) {
+  }
+  
+  .burger-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .burger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  @media (min-width: 1020px) {
+    .burger-menu {
+      display: none;
+    }
+  
+    .menu {
+      display: flex;
+    }
+  
     .navbar ul {
-        display: flex;
+      display: flex;
     }
+  
     .navbar ul li:not(:last-child) {
-        margin-right: var(--spacing-margin-large);
+      margin-right: var(--spacing-margin-large);
     }
-    
+  
     .navbar ul li:last-child {
-        margin-right: 0;
-        margin-left: auto;
+      margin-right: 0;
+      margin-left: auto;
     }
-   
-}
-
-/* navbar link highlight */
-.navbar a.is-active {
+  }
+  
+  @media (max-width: 1020px) {
+    .navbar ul {
+      display: none;
+    }
+  
+    .burger-menu {
+      display: block;
+    }
+  
+    .menu {
+      flex-direction: column;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+  }
+  
+  /* navbar link highlight */
+  .navbar a.is-active {
     text-decoration: underline;
     text-underline-offset: 0.4rem;
-}
+  }
+  
 
 /* Intern Nav (Page Navigation)
 ############################################################################ */
